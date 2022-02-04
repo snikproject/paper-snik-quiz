@@ -17,7 +17,8 @@
 \usepackage{tabularx}
 \usepackage{csquotes}
 \usepackage{siunitx}
-%\usepackage[disable]{todonotes}
+\usepackage{todonotes}
+\setuptodonotes{inline}
 \newcommand{\citet}{\cite}% citet is not defined without natbib
 \newcommand{\citep}{\cite}% citep is not defined without natbib
 %\setlength{\marginparwidth}{2.1cm}% enough space for todonotes
@@ -363,6 +364,12 @@ While the basic question types were received positively during the Frank van Swi
 One of the experts questioned the didactic value of the \emph{intertwined} questions, as the users cannot know the exact graph structure of SNIK and thus may difficulties deciding, which triplets of concepts are most strongly connected.
 While the closeMatch were rated as most complex, the complexity was seen mostly seen as grammatical and not enough on the didactically relevant relationships between the entities.
 Contrary to the initial assumption that well explained questions would be beneficial, shorter questions were preferred as they could be read more quickly.
+
+\todo{subklassenbeziehung bei nachbarschaft problematisch, weil implizit relation für die auch gilt, oberklassen sind ok, weil es nicht auf alle zutrifft. auf beispiel mit physician und senior physician und healthcare professional verweisen.}
+\todo{enge nachbarschaft allgemein problematisch, weil die relationen dann so ungefähr mit gelten}
+\todo{wir brauchen benannte abkürzungen wie großeltern = kind->kind}
+\todo{momentan für studenten nicht verwendbar und für prüfungen schon gar nicht, muss für praktischen einsatz noch weiter ausgebaut werden}
+\todo{gibt auch rückschlüsse auf fehler der ontologie und hilft uns herauszufinden, was wirklich gemeint ist. auch wichtig mit some vs forall quantor und so.}
 
 %However, only certain question types are feasible with SNIK.
 %Because SNIK only contains the knowledge that the source textbooks describe, it does not contain the complete domain of Hospital Information Management.
