@@ -1,6 +1,7 @@
 ## About
 
 [MIE 2022](https://mie2022.org/en/) conference paper about [SNIK Quiz](https://www.snik.eu/quiz), which is a multiple choice game with questions generated from the [SNIK Ontology](https://github.com/snikproject/ontology).
+Compile with with pdflatex and bibtex or together using `latexmk -pdf paper.tex`.
 
 ## Contents
 
