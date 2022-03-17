@@ -103,7 +103,7 @@ The central entities of the meta model are enterprise functions, roles executing
 SNIK version \snikversionlink{} contains \sniktriples{} triples describing \snikproperties{} properties and \snikclasses{} classes, of which there are \snikroles{} roles, \snikfunctions{} functions and \snikentitytypes{} entity types.
 %Applications include a graph visualization for exploratiory learning, 
 %
-This paper presents SNIK Quiz, an open source\footnotemark{} browser game, see \cref{fig:snikquiz}, in which students answer multiple-choice questions about HIM, including an evaluation by domain experts and a student.
+This paper presents SNIK Quiz, an open source\footnotemark{} browser game, see \cref{fig:snikquiz}, in which students answer multiple-choice questions about health information management (HIM), including an evaluation by domain experts and a student.
 \footnotetext{Source code available under the MIT license at \url{https://github.com/snikproject/quiz}. The user interface is a fork of \url{https://github.com/davidrayoussef/react-quiz}.}
 %A HIS processes data, information, and knowledge and its management involves planning, monitoring and directing those activities.
 %Due to the complexity and the unique conditions in health care, HIS management is an challenging task.
@@ -372,16 +372,21 @@ The main limitation of SNIK Quiz is that qualitative feedback on those complex q
 One of the experts questioned the didactic value of the \emph{intertwined} questions, as the users cannot know the exact graph structure of SNIK and thus may difficulties deciding, which triplets of concepts are most strongly connected.
 While the closeMatch were rated as most complex, the complexity was seen mostly seen as grammatical and not enough on the didactically relevant relationships between the entities.
 Contrary to the initial assumption that well explained questions would be beneficial, shorter questions were preferred as they could be read more quickly.
-\todo{distractors}
+%A limitation of the distractor generation using graph neighbourhood is that it includes subclass/superclass relationships, where it is not clear whether the given wrong answer can be argued to hold as well, even if that fact is not explicitly modelled.
+Questions should also clarify that the least specific correct answer is expected in cases such as the example for the subject template in \cref{tab:templates}:
+As a subclass of the correct answer \enquote{physician}, each \enquote{senior physician} is also implicitly responsible for medical admission and for \enquote{health care professionals} (superclass of physician) this is at least partly true.
+As SNIK can only cover the domain of HIM as far as it is described by the underlying textbooks, distractors may actually be correct answers in the real world.
+Evaluation of SNIK Quiz questions helps uncover and fix missing and incorrect facts in SNIK.
+%Generally, close neighbourhood is problematic for distractor generation in SNIK because, .
+%It needs to be investigated further, whether subclass relationships should be excluded in future work or whether provide valuable distractors.
+% SeniorPhysician < Physician < HealthCareProfessional
 %Distractor generation using graph neighbourhood suffers from the meta model of SNIK, where 
 %Generally, 
 
 
-\todo{subklassenbeziehung bei nachbarschaft problematisch, weil implizit relation für die auch gilt, oberklassen sind ok, weil es nicht auf alle zutrifft. auf beispiel mit physician und senior physician und healthcare professional verweisen.}
-\todo{enge nachbarschaft allgemein problematisch, weil die relationen dann so ungefähr mit gelten}
-\todo{wir brauchen benannte abkürzungen wie großeltern = kind->kind}
-\todo{momentan für studenten nicht verwendbar und für prüfungen schon gar nicht, muss für praktischen einsatz noch weiter ausgebaut werden}
-\todo{gibt auch rückschlüsse auf fehler der ontologie und hilft uns herauszufinden, was wirklich gemeint ist. auch wichtig mit some vs forall quantor und so.}
+%\todo{enge nachbarschaft allgemein problematisch, weil die relationen dann so ungefähr mit gelten}
+%\todo{wir brauchen benannte abkürzungen wie großeltern = kind->kind}
+%\todo{gibt auch rückschlüsse auf fehler der ontologie und hilft uns herauszufinden, was wirklich gemeint ist. auch wichtig mit some vs forall quantor und so.}
 
 %However, only certain question types are feasible with SNIK.
 %Because SNIK only contains the knowledge that the source textbooks describe, it does not contain the complete domain of Hospital Information Management.
@@ -410,7 +415,7 @@ Contrary to the initial assumption that well explained questions would be benefi
 %\section{Future Work}
 \section{Conclusions}
 SNIK Quiz shows that knowledge on the management of information systems in medicine and health care can be used to semi-automatically generate multiple-choice questions.
-While preliminary evaluations show promising results, the complex question types need to be investigated further.
+While preliminary evaluations show promising results, the complex question types need to be investigated further before it can be effectively used by students.
 Future work should also include a quantitative evaluation of learning efficiency when supplementing courses with SNIK Quiz.
 %Use of neural networks and language models in combination with linked data to generate more natural questions and answers is another avenue for further exploration.
 
